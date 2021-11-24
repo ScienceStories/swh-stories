@@ -13,7 +13,7 @@ const Footer = () => {
         alignItems="center"
         className={classes.container}
         container
-        justify="center"
+        justifyContent="center"
       >
         {FooterLinks.map(({ logo, name, url }) => (
           <Grid
