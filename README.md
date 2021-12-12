@@ -1,7 +1,7 @@
 # Software Heritage Stories
 ## About the Project
 Dynamic Stories App developed by the [Science Stories Team](http://sciencestories.io) in collaboration with [Software Heritage](https://www.softwareheritage.org/swhap/)  
-to display software curated by the Software Heritage Acquisition Process in a mutli-media web-based visualizer.
+to display software curated by the Software Heritage Acquisition Process in a multi-media web-based visualizer.
 
 ## Available Scripts
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
