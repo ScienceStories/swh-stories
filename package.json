@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "react-scripts build",
+    "build": "react-scripts --max_old_space_size=4096 build",
     "eject": "react-scripts eject",
     "start": "PORT=$npm_package_config_port react-scripts start",
     "test": "react-scripts test"
@@ -33,7 +33,7 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "5.3.0",
     "react-scripts": "4.0.3",
-    "react-stories-api": "0.0.1-dev-17",
+    "react-stories-api": "0.0.1-dev-18",
     "sass": "1.41.0",
     "web-vitals": "^1.0.1"
   },
@@ -47,6 +47,7 @@
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-airbnb-typescript": "14.0.0",
+    "eslint-config-react-app": "^6.0.0",
     "eslint-config-standard": "16.0.3",
     "eslint-config-standard-react": "11.0.1",
     "eslint-plugin-import": "2.24.2",
