@@ -3,6 +3,8 @@ import { StoriesAPICollection } from 'react-stories-api';
 
 import {
   STORIES_API_ENDPOINT,
+  STORIES_API_INRIA_COLLECTION_ID,
+  STORIES_API_PISA_COLLECTION_ID,
   STORIES_API_PUBLIC_KEY,
 } from '../../../constants';
 import { formatStoryURL } from '../../../utils/url';
@@ -11,14 +13,10 @@ import Header from '../../layout/Header';
 import PageTitle from '../../layout/PageTitle';
 import useStyles from './useStyles';
 
-interface Props {
-  baseUrl: string;
-  collectionId: number;
-}
+const urlFormatter = formatStoryURL('$id');
 
-const CollectionPage = ({ baseUrl, collectionId }: Props) => {
+const HomePage = () => {
   const classes = useStyles();
-  const urlFormatter = formatStoryURL('$id', baseUrl);
   return (
     <>
       <PageTitle title="Browse Stories" />
@@ -27,7 +25,15 @@ const CollectionPage = ({ baseUrl, collectionId }: Props) => {
         <StoriesAPICollection
           apiKey={STORIES_API_PUBLIC_KEY}
           endpoint={STORIES_API_ENDPOINT}
-          id={collectionId}
+          id={STORIES_API_PISA_COLLECTION_ID}
+          urlFormatter={urlFormatter}
+        />
+      </div>
+      <div className={classes.collectionContainer}>
+        <StoriesAPICollection
+          apiKey={STORIES_API_PUBLIC_KEY}
+          endpoint={STORIES_API_ENDPOINT}
+          id={STORIES_API_INRIA_COLLECTION_ID}
           urlFormatter={urlFormatter}
         />
       </div>
@@ -36,4 +42,4 @@ const CollectionPage = ({ baseUrl, collectionId }: Props) => {
   );
 };
 
-export default CollectionPage;
+export default HomePage;

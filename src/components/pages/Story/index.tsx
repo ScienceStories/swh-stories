@@ -4,9 +4,9 @@ import { RouteComponentProps } from 'react-router-dom';
 import StoriesAPIStory from 'react-stories-api';
 
 import {
-  APP_BROWSE_URL,
   APP_NAME,
-  STORIES_API_COLLECTION_ID,
+  STORIES_API_INRIA_COLLECTION_ID,
+  STORIES_API_PISA_COLLECTION_ID,
   STORIES_API_ENDPOINT,
   STORIES_API_PUBLIC_KEY, SWH_LOGO,
 } from '../../../constants';
@@ -18,27 +18,34 @@ interface Props extends RouteComponentProps {
 }
 
 interface MatchParams {
+  baseUrl: string;
   storyId: number;
 }
 
+const RouteCollectionIdMap: Record<string, number> = {
+  inria: STORIES_API_INRIA_COLLECTION_ID,
+  pisa: STORIES_API_PISA_COLLECTION_ID,
+};
+
 const StoryPage = ({ match }: Props) => {
   const classes = useStyles();
-  const { storyId } = match.params as MatchParams;
+  const { baseUrl, storyId } = match.params as MatchParams;
   const [story, setStory] = useState({} as Story);
   const { label } = story;
+  const collection = RouteCollectionIdMap[baseUrl];
   return (
     <>
       <PageTitle title={`${label || storyId}`} />
       <StoriesAPIStory
         apiKey={STORIES_API_PUBLIC_KEY}
-        collection={STORIES_API_COLLECTION_ID}
+        collection={collection}
         endpoint={STORIES_API_ENDPOINT}
         id={storyId}
         onLoad={setStory}
         options={{
           logo: (
             <Button
-              href={APP_BROWSE_URL}
+              href={`/${baseUrl}`}
               size="small"
             >
               <img
