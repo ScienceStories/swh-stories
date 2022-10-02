@@ -15,12 +15,18 @@ export enum Images {
   swh = '/images/swh-full.png',
   unesco = '/images/unesco.png',
 }
-export const STORIES_API_COLLECTION_ID = 42;
 export const STORIES_API_ENDPOINT = 'https://stage.stories.k2.services';
+export const STORIES_API_INRIA_COLLECTION_ID = 45;
+export const STORIES_API_PISA_COLLECTION_ID = 42;
 export const STORIES_API_PUBLIC_KEY = 'tN5X1y7O.2NhLogJVhLsYANuCtSP1FjHPZHA6TUBd';
 export const SCIENCE_STORIES_URL = 'http://sciencestories.io';
 export const SWH_LOGO = '/images/swh.png';
 export const SWH_URL = 'https://softwareheritage.org';
+export const RouteCollectionIdMap: Record<string, number> = {
+  inria: STORIES_API_INRIA_COLLECTION_ID,
+  pisa: STORIES_API_PISA_COLLECTION_ID,
+  stories: STORIES_API_PISA_COLLECTION_ID, // Deprecated route for backwards compatibility
+};
 export const FooterLinks = [
   { name: 'Software Heritage', logo: Images.swh, url: SWH_URL },
   { name: 'Università Di Pisa', logo: Images.pisa, url: 'https://unipi.it' },
