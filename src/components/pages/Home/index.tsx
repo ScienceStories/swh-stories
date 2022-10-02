@@ -13,8 +13,6 @@ import Header from '../../layout/Header';
 import PageTitle from '../../layout/PageTitle';
 import useStyles from './useStyles';
 
-const urlFormatter = formatStoryURL('$id');
-
 const HomePage = () => {
   const classes = useStyles();
   return (
@@ -26,15 +24,14 @@ const HomePage = () => {
           apiKey={STORIES_API_PUBLIC_KEY}
           endpoint={STORIES_API_ENDPOINT}
           id={STORIES_API_PISA_COLLECTION_ID}
-          urlFormatter={urlFormatter}
+          urlFormatter={formatStoryURL('$id', '/pisa')}
         />
-      </div>
-      <div className={classes.collectionContainer}>
+        <div className={classes.divider} />
         <StoriesAPICollection
           apiKey={STORIES_API_PUBLIC_KEY}
           endpoint={STORIES_API_ENDPOINT}
           id={STORIES_API_INRIA_COLLECTION_ID}
-          urlFormatter={urlFormatter}
+          urlFormatter={formatStoryURL('$id', '/inria')}
         />
       </div>
       <Footer />

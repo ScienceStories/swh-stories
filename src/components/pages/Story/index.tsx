@@ -5,8 +5,7 @@ import StoriesAPIStory from 'react-stories-api';
 
 import {
   APP_NAME,
-  STORIES_API_INRIA_COLLECTION_ID,
-  STORIES_API_PISA_COLLECTION_ID,
+  RouteCollectionIdMap,
   STORIES_API_ENDPOINT,
   STORIES_API_PUBLIC_KEY, SWH_LOGO,
 } from '../../../constants';
@@ -21,11 +20,6 @@ interface MatchParams {
   baseUrl: string;
   storyId: number;
 }
-
-const RouteCollectionIdMap: Record<string, number> = {
-  inria: STORIES_API_INRIA_COLLECTION_ID,
-  pisa: STORIES_API_PISA_COLLECTION_ID,
-};
 
 const StoryPage = ({ match }: Props) => {
   const classes = useStyles();
