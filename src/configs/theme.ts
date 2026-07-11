@@ -8,7 +8,7 @@ const theme = {
       main: Color.Red,
     },
     secondary: {
-      main: Color.DarkGray,
+      main: Color.Yellow,
     },
     text: {
       primary: grey[800],
