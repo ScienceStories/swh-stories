@@ -1,60 +1,63 @@
 {
   "name": "swh-stories",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScienceStories/swh-stories.git"
+  },
+  "author": "Stories Services",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ScienceStories/swh-stories/issues"
+  },
+  "homepage": "https://github.com/ScienceStories/swh-stories#readme",
   "scripts": {
-    "build": "react-scripts --max_old_space_size=4096 build",
-    "eject": "react-scripts eject",
-    "start": "PORT=$npm_package_config_port react-scripts start",
-    "test": "react-scripts test"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "config": {
-    "port": "5000"
+    "start": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@material-ui/core": "4.12.3",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-helmet": "^6.1.0",
-    "react-router-dom": "5.3.0",
-    "react-scripts": "4.0.3",
-    "react-stories-api": "0.0.1-dev-21",
-    "sass": "1.41.0",
-    "web-vitals": "^1.0.1"
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.1",
+    "@fontsource/roboto": "5.2.10",
+    "@mui/icons-material": "6.5.0",
+    "@mui/lab": "6.0.1-beta.36",
+    "@mui/material": "6.5.0",
+    "aos": "3.0.0-beta.6",
+    "mobx": "6.15.1",
+    "mobx-react-lite": "4.1.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-helmet": "6.1.0",
+    "react-if": "4.1.6",
+    "react-router": "7.18.1",
+    "react-router-dom": "7.18.1",
+    "react-router-hash-link": "2.4.3",
+    "react-scroll-parallax": "3.5.0",
+    "react-stories-api": "1.0.0-dev-67"
   },
   "devDependencies": {
-    "@types/node": "^12.0.0",
-    "@types/react": "16.14.15",
-    "@types/react-dom": "^17.0.11",
-    "@types/react-helmet": "^6.1.2",
-    "@types/react-router-dom": "^5.3.2",
-    "@typescript-eslint/eslint-plugin": "4.31.1",
-    "eslint-config-airbnb": "18.2.1",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-airbnb-typescript": "14.0.0",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-config-standard": "16.0.3",
-    "eslint-config-standard-react": "11.0.1",
-    "eslint-plugin-import": "2.24.2",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "5.1.0",
-    "eslint-plugin-react": "7.25.1",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "typescript": "^4.1.2"
+    "@types/aos": "3.0.8",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "@types/react-helmet": "6.1.11",
+    "@types/react-router-dom": "5.3.3",
+    "@types/react-router-hash-link": "2.4.9",
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+    "@typescript-eslint/parser": "7.18.0",
+    "@vitejs/plugin-react": "4.4.1",
+    "@vitejs/plugin-react-swc": "3.11.0",
+    "eslint": "8.57.1",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "18.0.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-react-refresh": "0.4.26",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "typescript": "5.9.3",
+    "vite": "6.4.3"
   }
 }
