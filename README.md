@@ -1,43 +1,44 @@
 # Software Heritage Stories
+
 ## About the Project
+
 Dynamic Stories App developed by the [Science Stories Team](http://sciencestories.io) in collaboration with [Software Heritage](https://www.softwareheritage.org/swhap/)  
 to display software curated by the Software Heritage Acquisition Process in a multi-media web-based visualizer.
 
-## Available Scripts
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Content Source Configuration
 
-In the project directory, you can run:
+The app supports two data source modes controlled by environment variables:
 
-### `npm start`
+1. `BUCKET` mode: fetches static JSON content from a bucket/CDN path.
+2. `API` mode: fetches content from Stories Services API.
 
-Runs the app in the development mode.\
-Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+Set these values in your environment (usually `.env`).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Bucket Mode
 
-### `npm run build`
+```bash
+VITE_STORIES_CONTENT_SOURCE=BUCKET
+VITE_COLLECTIONS_BASE_URL=https://your-cdn-or-bucket-domain
+VITE_COLLECTIONS_ROOT_PATH=/collections
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Expected paths:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. `/collections/manifest.json`
+2. `/collections/:collectionId/manifest.json`
+3. `/collections/:collectionId/stories/:storyId.json`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Stories API Mode
 
-### `npm run eject`
+```bash
+VITE_STORIES_CONTENT_SOURCE=API
+VITE_STORIES_SERVICES_API_BASE_URL=your_services_api_env_base_url
+VITE_STORIES_SERVICES_API_KEY=your_api_key
+VITE_STORIES_SERVICES_PROJECT_ID=your_project_id
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Notes:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. `VITE_STORIES_CONTENT_SOURCE` defaults to `BUCKET`.
+2. API mode requires all three API vars (`BASE_URL`, `API_KEY`, `PROJECT_ID`).
+3. UI rendering remains the same in either mode; source branching is handled in the data layer.
