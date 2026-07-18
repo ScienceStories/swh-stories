@@ -1,0 +1,14 @@
+:root {
+  font-family: 'Alegreya Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+}

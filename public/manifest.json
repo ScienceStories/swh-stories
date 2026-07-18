@@ -1,20 +1,20 @@
 {
-  "short_name": "Software Heritage Stories",
-  "name": "Software Heritage Stories",
+  "short_name": "Software Stories",
+  "name": "Software Stories",
   "icons": [
     {
+      "sizes": "32x32",
       "src": "logo-32x32.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
+      "sizes": "512x512",
       "src": "logo.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "type": "image/png"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#e20427",
+  "theme_color": "#c86919",
   "background_color": "#ffffff"
 }
